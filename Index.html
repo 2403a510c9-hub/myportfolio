@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Harshitha | Portfolio</title>
+
+    <style>
+        /* ---------- GENERAL ---------- */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f7ff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #5b4bb7;
+            margin-bottom: 40px;
+        }
+
+
+        /* ---------- NAVBAR ---------- */
+
+        header {
+            background: white;
+            padding: 18px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #5b4bb7;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #6c5ce7;
+        }
+
+
+        /* ---------- HOME ---------- */
+
+        #home {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            background: linear-gradient(135deg, #f8f7ff, #e9e5ff);
+        }
+
+        .home-content {
+            max-width: 650px;
+        }
+
+        .home-content h1 {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .home-content h1 span {
+            color: #5b4bb7;
+        }
+
+        .home-content h2 {
+            font-size: 25px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .home-content p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #5b4bb7;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            margin-right: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #44379b;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #5b4bb7;
+            border: 2px solid #5b4bb7;
+        }
+
+        .btn-outline:hover {
+            color: white;
+        }
+
+        .home-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: #dcd6ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5b4bb7;
+            font-size: 80px;
+        }
+
+
+        /* ---------- ABOUT ---------- */
+
+        .about-container {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .about-info {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .about-info p {
+            margin-bottom: 10px;
+        }
+
+        .about-info strong {
+            color: #5b4bb7;
+        }
+
+
+        /* ---------- SKILLS ---------- */
+
+        #skills {
+            background: #eeeaff;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .skill-card h3 {
+            color: #5b4bb7;
+            margin-bottom: 10px;
+        }
+
+
+        /* ---------- EDUCATION ---------- */
+
+        .education-card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-left: 5px solid #5b4bb7;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+        }
+
+        .education-card h3 {
+            color: #5b4bb7;
+        }
+
+        .education-card p {
+            color: #666;
+        }
+
+
+        /* ---------- PROJECTS ---------- */
+
+        #projects {
+            background: #eeeaff;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .project-card h3 {
+            color: #5b4bb7;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .project-tech {
+            font-size: 14px;
+            color: #777;
+        }
+
+
+        /* ---------- CERTIFICATIONS ---------- */
+
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .certificate-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+        }
+
+        .certificate-card h3 {
+            color: #5b4bb7;
+            margin-bottom: 10px;
+        }
+
+
+        /* ---------- CONTACT ---------- */
+
+        #contact {
+            background: #eeeaff;
+        }
+
+        .contact-container {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-container p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .contact-links {
+            margin-top: 25px;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            background: #5b4bb7;
+            color: white;
+        }
+
+        .contact-links a:hover {
+            background: #44379b;
+        }
+
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            background: #292441;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+
+        /* ---------- RESPONSIVE ---------- */
+
+        @media (max-width: 900px) {
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .certifications-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .home-content h1 {
+                font-size: 40px;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            #home {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 60px;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .certifications-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <div class="logo">
+            Harshitha.
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home">
+
+        <div class="home-content">
+
+            <h1>
+                Hi, I'm <span>Harshitha</span>
+            </h1>
+
+            <h2>
+                B.Tech Computer Science Student
+            </h2>
+
+            <p>
+                I'm a Computer Science student interested in
+                software development, data analytics, artificial
+                intelligence and building practical projects.
+            </p>
+
+            <a href="#projects" class="btn">
+                View My Projects
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Contact Me
+            </a>
+
+        </div>
+
+
+        <div class="home-image">
+            👩‍💻
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+                    I am a B.Tech Computer Science student
+                    passionate about learning new technologies
+                    and improving my programming skills.
+                </p>
+
+                <p>
+                    Currently, I am focusing on Data Structures
+                    and Algorithms, Python, SQL, Artificial
+                    Intelligence and Machine Learning.
+                </p>
+
+                <p>
+                    My goal is to gain practical industry
+                    experience through internships and build
+                    useful software projects.
+                </p>
+
+            </div>
+
+
+            <div class="about-info">
+
+                <p>
+                    <strong>Name:</strong> Harshitha
+                </p>
+
+                <p>
+                    <strong>Degree:</strong> B.Tech CSE
+                </p>
+
+                <p>
+                    <strong>University:</strong> SR University
+                </p>
+
+                <p>
+                    <strong>Location:</strong> Telangana, India
+                </p>
+
+                <p>
+                    <strong>Interests:</strong>
+                    DSA, AI, ML, Data Analytics
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            My Skills
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Beginner - Intermediate</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>C</h3>
+                <p>Programming Fundamentals</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>SQL</h3>
+                <p>Database & Queries</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>HTML & CSS</h3>
+                <p>Web Development</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <p>Basic Knowledge</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Power BI</h3>
+                <p>Data Visualization</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Excel</h3>
+                <p>Data Analysis</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Git & GitHub</h3>
+                <p>Version Control</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            Education
+        </h2>
+
+        <div class="education-card">
+
+            <h3>
+                B.Tech - Computer Science and Engineering
+            </h3>
+
+            <p>
+                SR University
+            </p>
+
+            <p>
+                Currently pursuing
+            </p>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>
+                Intermediate
+            </h3>
+
+            <p>
+                Your College Name
+            </p>
+
+            <p>
+                Add your percentage / CGPA here
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            My Projects
+        </h2>
+
+        <div class="projects-container">
+
+
+            <div class="project-card">
+
+                <h3>
+                    Diabetes Prediction System
+                </h3>
+
+                <p>
+                    A machine learning project that predicts
+                    whether a person is likely to have diabetes
+                    based on different health-related features.
+                </p>
+
+                <p class="project-tech">
+                    <strong>Technologies:</strong>
+                    Python, Pandas, Scikit-learn, Machine Learning
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Student Performance Dashboard
+                </h3>
+
+                <p>
+                    An interactive dashboard designed to analyze
+                    student performance and display useful
+                    insights through visualizations.
+                </p>
+
+                <p class="project-tech">
+                    <strong>Technologies:</strong>
+                    Python, Plotly, Pandas
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    AI Career Guidance Chatbot
+                </h3>
+
+                <p>
+                    A chatbot that provides career guidance
+                    based on frequently asked questions and
+                    user requirements.
+                </p>
+
+                <p class="project-tech">
+                    <strong>Technologies:</strong>
+                    Python, Flask, AI
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    AI Language Translator
+                </h3>
+
+                <p>
+                    A simple web application that translates
+                    text between multiple languages.
+                </p>
+
+                <p class="project-tech">
+                    <strong>Technologies:</strong>
+                    Python, Flask, Googletrans
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CERTIFICATIONS ================= -->
+
+    <section id="certifications">
+
+        <h2 class="section-title">
+            Certifications & Experiences
+        </h2>
+
+        <div class="certifications-container">
+
+
+            <div class="certificate-card">
+
+                <h3>
+                    Deloitte Job Simulation
+                </h3>
+
+                <p>
+                    Forage
+                </p>
+
+            </div>
+
+
+            <div class="certificate-card">
+
+                <h3>
+                    Tata GenAI Powered Data Analytics
+                </h3>
+
+                <p>
+                    Forage
+                </p>
+
+            </div>
+
+
+            <div class="certificate-card">
+
+                <h3>
+                    CodeAlpha AI Internship
+                </h3>
+
+                <p>
+                    AI & Machine Learning
+                </p>
+
+            </div>
+
+
+            <div class="certificate-card">
+
+                <h3>
+                    Smart India Hackathon
+                </h3>
+
+                <p>
+                    College Internal Hackathon
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact Me
+        </h2>
+
+        <div class="contact-container">
+
+            <p>
+                I'm open to internships, learning opportunities,
+                collaborations and interesting projects.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="mailto:yourmail@gmail.com">
+                    📧 Email
+                </a>
+
+                <a href="https://www.linkedin.com/" target="_blank">
+                    🔗 LinkedIn
+                </a>
+
+                <a href="https://github.com/" target="_blank">
+                    💻 GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Harshitha. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
